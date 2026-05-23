@@ -21,10 +21,10 @@ export default function Contact() {
         body: JSON.stringify(form)
       })
 
-      const data = await response.json()
+      const data = await response.json().catch(() => ({}))
 
       if (!response.ok) {
-        throw new Error(data.error || 'Submission failed. Please try again.')
+        throw new Error(data.message || data.error || 'Submission failed. Please try again.')
       }
 
       setSuccess(true)

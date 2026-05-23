@@ -1,104 +1,124 @@
-import http from 'http'
-import url from 'url'
+import express from 'express'
+import dotenv from 'dotenv'
+import { Resend } from 'resend'
+import { createClient } from '@supabase/supabase-js'
 
-const submissions = []
+dotenv.config({ path: '.env.local' })
 
-const server = http.createServer(async (req, res) => {
-  // Enable CORS
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
-  res.setHeader('Content-Type', 'application/json')
+const app = express()
+const PORT = 3001
 
-  // Handle preflight
-  if (req.method === 'OPTIONS') {
-    res.writeHead(200)
-    res.end()
-    return
-  }
+app.use(express.json())
 
-  const parsedUrl = url.parse(req.url, true)
-  const pathname = parsedUrl.pathname
+console.log('RESEND_API_KEY exists:', !!process.env.RESEND_API_KEY)
+console.log('SUPABASE_URL exists:', !!process.env.SUPABASE_URL)
+console.log('SUPABASE_SERVICE_ROLE_KEY exists:', !!process.env.SUPABASE_SERVICE_ROLE_KEY)
+console.log('CONTACT_TO_EMAIL exists:', !!process.env.CONTACT_TO_EMAIL)
+console.log('CONTACT_FROM_EMAIL exists:', !!process.env.CONTACT_FROM_EMAIL)
 
-  if (req.method === 'POST' && pathname === '/api/contact') {
-    let body = ''
+const resend = new Resend(process.env.RESEND_API_KEY)
 
-    req.on('data', chunk => {
-      body += chunk.toString()
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+)
+
+app.post('/api/contact', async (req, res) => {
+  try {
+    console.log('Received contact form:', req.body)
+
+    const { name, email, company, need, details } = req.body
+
+    if (!name || !email || !need || !details) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please fill in all required fields.'
+      })
+    }
+
+    const { data, error: supabaseError } = await supabase
+      .from('contact_submissions')
+      .insert([
+        {
+          name,
+          email,
+          company: company || '',
+          need,
+          details
+        }
+      ])
+      .select()
+
+    if (supabaseError) {
+      console.error('Supabase error:', supabaseError)
+
+      return res.status(500).json({
+        success: false,
+        message: supabaseError.message
+      })
+    }
+
+    console.log('Saved to Supabase:', data)
+
+    const { error: resendError } = await resend.emails.send({
+      from: process.env.CONTACT_FROM_EMAIL,
+      to: process.env.CONTACT_TO_EMAIL,
+      subject: `New Webforge Inquiry from ${name}`,
+      html: `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+        <p><strong>Need:</strong> ${need}</p>
+        <p><strong>Details:</strong></p>
+        <p>${details}</p>
+      `
     })
 
-    req.on('end', () => {
-      try {
-        const data = JSON.parse(body)
+    if (resendError) {
+      console.error('Resend error:', resendError)
 
-        // Validate required fields
-        if (!data.name || !data.email || !data.need || !data.details) {
-          res.writeHead(400)
-          return res.end(
-            JSON.stringify({
-              error: 'Missing required fields: name, email, need, details'
-            })
-          )
-        }
+      return res.status(200).json({
+        success: true,
+        message: 'Message saved, but email notification failed.'
+      })
+    }
 
-        // Validate email format
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailRegex.test(data.email)) {
-          res.writeHead(400)
-          return res.end(
-            JSON.stringify({
-              error: 'Invalid email format'
-            })
-          )
-        }
-
-        // Store submission
-        const submission = {
-          id: Date.now(),
-          name: data.name.trim(),
-          email: data.email.trim(),
-          company: data.company?.trim() || '',
-          need: data.need.trim(),
-          details: data.details.trim(),
-          timestamp: new Date().toISOString()
-        }
-
-        submissions.push(submission)
-
-        // Log to console for development
-        console.log(`\n✓ New contact submission (ID: ${submission.id})`)
-        console.log(`  Name: ${submission.name}`)
-        console.log(`  Email: ${submission.email}`)
-        console.log(`  Company: ${submission.company || '(not provided)'}`)
-        console.log(`  Need: ${submission.need}`)
-        console.log(`  Time: ${submission.timestamp}\n`)
-
-        res.writeHead(200)
-        res.end(
-          JSON.stringify({
-            success: true,
-            message: 'Your message has been received. We will get back to you soon.',
-            id: submission.id
-          })
-        )
-      } catch (err) {
-        res.writeHead(400)
-        res.end(JSON.stringify({ error: 'Invalid JSON in request body' }))
-      }
+    return res.status(200).json({
+      success: true,
+      message: 'Message sent successfully.'
     })
-  } else if (req.method === 'GET' && pathname === '/api/contact') {
-    // For development only - view submissions
-    res.writeHead(200)
-    res.end(JSON.stringify({ submissions: submissions.length, data: submissions }))
-  } else {
-    res.writeHead(404)
-    res.end(JSON.stringify({ error: 'Not found' }))
+  } catch (error) {
+    console.error('Contact API error:', error)
+
+    return res.status(500).json({
+      success: false,
+      message: error.message || 'Server error. Please try again.'
+    })
   }
 })
 
-const PORT = process.env.PORT || 3001
-server.listen(PORT, () => {
+app.get('/api/contact', async (req, res) => {
+  const { data, error } = await supabase
+    .from('contact_submissions')
+    .select('*')
+    .order('created_at', { ascending: false })
+
+  if (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message
+    })
+  }
+
+  return res.status(200).json({
+    success: true,
+    submissions: data
+  })
+})
+
+app.listen(PORT, () => {
   console.log(`Contact API server running on http://localhost:${PORT}`)
-  console.log(`POST /api/contact - Submit contact form`)
-  console.log(`GET /api/contact - View submissions (dev only)`)
+  console.log('POST /api/contact - Submit contact form')
+  console.log('GET /api/contact - View submissions')
 })
