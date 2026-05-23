@@ -1,24 +1,20 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
 export default function FAQItem({ question, answer }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [open, setOpen] = useState(false)
 
   return (
-    <div className={`faq-item ${isOpen ? 'open' : ''}`}>
+    <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm">
       <button
-        className="faq-question"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
+        type="button"
+        className="flex w-full items-center justify-between gap-4 text-left text-black"
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
       >
-        <span>{question}</span>
-        <span className="faq-toggle">{isOpen ? '−' : '+'}</span>
+        <span className="font-semibold text-base">{question}</span>
+        <span className="text-2xl">{open ? '−' : '+'}</span>
       </button>
-      
-      {isOpen && (
-        <div className="faq-answer">
-          <p>{answer}</p>
-        </div>
-      )}
+      {open && <p className="mt-4 text-gray-600 leading-7">{answer}</p>}
     </div>
   )
 }

@@ -1,101 +1,53 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    projectType: '',
-    details: ''
-  })
-
+  const [form, setForm] = useState({ name: '', email: '', company: '', need: '', details: '' })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
     setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: '', email: '', company: '', projectType: '', details: '' })
-      setSubmitted(false)
-    }, 3000)
+    setForm({ name: '', email: '', company: '', need: '', details: '' })
+    setTimeout(() => setSubmitted(false), 3000)
   }
 
   return (
-    <section id="contact" className="contact">
-      <div className="container">
-        <h2>LET'S TALK ABOUT YOUR PROJECT</h2>
-        <h3 className="section-subtitle">Ready to Get Started? Fill Out the Form Below</h3>
-
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-row">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <input
-            type="text"
-            name="company"
-            placeholder="Business / Company Name"
-            value={formData.company}
-            onChange={handleChange}
-          />
-
-          <select
-            name="projectType"
-            value={formData.projectType}
-            onChange={handleChange}
-            required
-          >
-            <option value="">What do you need?</option>
-            <option value="website">Business Website</option>
-            <option value="funnel">Sales Funnel</option>
-            <option value="ecommerce">E-commerce Store</option>
-            <option value="order-system">Order System</option>
-            <option value="app">Web Application</option>
-            <option value="other">Other</option>
-          </select>
-
-          <textarea
-            name="details"
-            placeholder="Project Details - Tell me about your project, goals, and timeline"
-            rows="6"
-            value={formData.details}
-            onChange={handleChange}
-            required
-          ></textarea>
-
-          <button type="submit" className="btn btn-primary full-width">
-            Send Message
-          </button>
-
-          {submitted && (
-            <div className="form-success">
-              ✓ Thanks! I'll get back to you within 24 hours.
+    <section id="contact" className="py-20 bg-white">
+      <div className="container-custom">
+        <div className="text-center mb-12">
+          <h2 className="section-title">LET’S TALK</h2>
+          <p className="section-subtitle mt-4">Tell me about your project and I’ll reply with a clear plan.</p>
+        </div>
+        <div className="mx-auto max-w-3xl card">
+          <form onSubmit={handleSubmit} className="grid gap-6">
+            <div className="grid gap-6 md:grid-cols-2">
+              <label className="block">
+                <span className="text-sm font-semibold text-black">Name</span>
+                <input type="text" name="name" value={form.name} onChange={handleChange} required className="mt-2 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 focus:border-black focus:outline-none" />
+              </label>
+              <label className="block">
+                <span className="text-sm font-semibold text-black">Email Address</span>
+                <input type="email" name="email" value={form.email} onChange={handleChange} required className="mt-2 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 focus:border-black focus:outline-none" />
+              </label>
             </div>
-          )}
-        </form>
+            <label className="block">
+              <span className="text-sm font-semibold text-black">Business / Company Name</span>
+              <input type="text" name="company" value={form.company} onChange={handleChange} className="mt-2 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 focus:border-black focus:outline-none" />
+            </label>
+            <label className="block">
+              <span className="text-sm font-semibold text-black">What do you need?</span>
+              <input type="text" name="need" value={form.need} onChange={handleChange} className="mt-2 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 focus:border-black focus:outline-none" />
+            </label>
+            <label className="block">
+              <span className="text-sm font-semibold text-black">Project Details</span>
+              <textarea name="details" value={form.details} onChange={handleChange} rows="5" className="mt-2 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3 focus:border-black focus:outline-none"></textarea>
+            </label>
+            <button type="submit" className="btn-primary w-full">Send Message</button>
+            {submitted && <p className="text-center text-sm text-green-600">Thanks! Your message has been sent.</p>}
+          </form>
+        </div>
       </div>
     </section>
   )

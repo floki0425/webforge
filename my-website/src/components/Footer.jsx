@@ -1,59 +1,43 @@
-export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
+﻿export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-section">
-            <h3 className="footer-logo">BuildFlow Studio</h3>
-            <p className="footer-tagline">Websites. Funnels. Systems.</p>
-            <p className="footer-description">
-              Building high-converting websites and systems for small businesses 
-              and entrepreneurs who want to grow online.
-            </p>
+    <footer className="bg-gray-950 text-white py-14">
+      <div className="container-custom">
+        <div className="grid gap-10 md:grid-cols-4">
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold">BuildFlow Studio</h3>
+            <p className="text-sm text-gray-400">Websites. Funnels. Systems.</p>
+            <p className="text-sm text-gray-500">Building modern digital systems for growing businesses.</p>
           </div>
-
-          <div className="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#packages">Packages</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#process">Process</a></li>
+          <div>
+            <h4 className="text-sm uppercase tracking-[.3em] text-gray-500 mb-4">Quick Links</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><a href="#home" className="hover:text-white">Home</a></li>
+              <li><a href="#services" className="hover:text-white">Services</a></li>
+              <li><a href="#packages" className="hover:text-white">Packages</a></li>
+              <li><a href="#portfolio" className="hover:text-white">Portfolio</a></li>
             </ul>
           </div>
-
-          <div className="footer-section">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+          <div>
+            <h4 className="text-sm uppercase tracking-[.3em] text-gray-500 mb-4">Resources</h4>
+            <ul className="space-y-3 text-sm text-gray-400">
+              <li><a href="#about" className="hover:text-white">About</a></li>
+              <li><a href="#faq" className="hover:text-white">FAQ</a></li>
+              <li><a href="#contact" className="hover:text-white">Contact</a></li>
+              <li><a href="#" className="hover:text-white">Privacy Policy</a></li>
             </ul>
           </div>
-
-          <div className="footer-section">
-            <h4>Follow</h4>
-            <div className="social-links">
-              <a href="#" aria-label="Twitter">𝕏</a>
-              <a href="#" aria-label="LinkedIn">in</a>
-              <a href="#" aria-label="GitHub">gh</a>
-              <a href="#" aria-label="Facebook">f</a>
+          <div>
+            <h4 className="text-sm uppercase tracking-[.3em] text-gray-500 mb-4">Follow</h4>
+            <div className="flex flex-wrap gap-3 text-sm text-gray-400">
+              <a href="#" className="rounded-2xl border border-gray-700 px-4 py-2 hover:border-white hover:text-white">X</a>
+              <a href="#" className="rounded-2xl border border-gray-700 px-4 py-2 hover:border-white hover:text-white">in</a>
+              <a href="#" className="rounded-2xl border border-gray-700 px-4 py-2 hover:border-white hover:text-white">GH</a>
+              <a href="#" className="rounded-2xl border border-gray-700 px-4 py-2 hover:border-white hover:text-white">FB</a>
             </div>
           </div>
         </div>
-
-        <div className="footer-bottom">
-          <p>&copy; {currentYear} BuildFlow Studio. All rights reserved.</p>
-          <div className="footer-legal">
-            <a href="#">Privacy Policy</a>
-            <span>•</span>
-            <a href="#">Terms of Service</a>
-          </div>
+        <div className="mt-12 border-t border-gray-800 pt-6 text-sm text-gray-500 text-center">
+          &copy; {new Date().getFullYear()} BuildFlow Studio. All rights reserved.
         </div>
       </div>
     </footer>
