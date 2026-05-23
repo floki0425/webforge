@@ -2,6 +2,7 @@
 import Hero from './components/Hero'
 import Services from './components/Services'
 import Packages from './components/Packages'
+import PremiumAccent from './components/PremiumAccent'
 import FeaturedWork from './components/FeaturedWork'
 import Process from './components/Process'
 import WhyWorkWithMe from './components/WhyWorkWithMe'
@@ -19,6 +20,7 @@ function App() {
         <Hero />
         <Services />
         <Packages />
+        <PremiumAccent />
         <FeaturedWork />
         <Process />
         <WhyWorkWithMe />
