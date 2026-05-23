@@ -9,7 +9,7 @@
   ]
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-[#F7F3EC]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">WHAT I DO</h2>
@@ -18,10 +18,10 @@
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map(service => (
             <div key={service.id} className="card">
-              <div className="text-4xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-black mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              <a href="#contact" className="text-black font-semibold hover:underline">Learn more →</a>
+              <div className="text-4xl mb-4 opacity-90">{service.icon}</div>
+              <h3 className="text-xl font-bold text-[#080808] mb-3">{service.title}</h3>
+              <p className="text-[#667085] mb-6">{service.description}</p>
+              <a href="#contact" className="text-[#C8A96A] font-semibold hover:text-[#080808] transition-colors">Learn more →</a>
             </div>
           ))}
         </div>

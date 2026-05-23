@@ -7,7 +7,7 @@
   ]
 
   return (
-    <section id="why" className="py-20 bg-white">
+    <section id="why" className="py-20 bg-[#F7F3EC]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">WHY WORK WITH ME</h2>
@@ -16,8 +16,8 @@
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {items.map(item => (
             <div key={item.id} className="card">
-              <h3 className="text-xl font-bold text-black mb-3">{item.title}</h3>
-              <p className="text-gray-600">{item.text}</p>
+              <h3 className="text-xl font-bold text-[#080808] mb-3">{item.title}</h3>
+              <p className="text-[#667085]">{item.text}</p>
             </div>
           ))}
         </div>

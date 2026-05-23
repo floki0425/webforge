@@ -13,7 +13,7 @@ import Footer from './components/Footer'
 
 function App() {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-[#F7F3EC] text-[#1F2933]">
       <Navbar />
       <main>
         <Hero />

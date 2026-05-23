@@ -1,41 +1,103 @@
-﻿@import "tailwindcss";
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --color-black: #080808;
+  --color-midnight: #101624;
+  --color-ivory: #F7F3EC;
+  --color-gold: #C8A96A;
+  --color-copper: #B76E42;
+  --color-charcoal: #1F2933;
+  --color-muted: #667085;
+  --color-border: #E7E1D6;
+  --shadow-sm: 0 2px 8px rgba(8, 8, 8, 0.08);
+  --shadow-md: 0 4px 16px rgba(8, 8, 8, 0.12);
+  --shadow-lg: 0 8px 24px rgba(8, 8, 8, 0.16);
+}
 
 @layer base {
-  body {
-    @apply bg-white text-black antialiased;
+  * {
+    @apply transition-colors duration-200;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-[#F7F3EC] text-[#1F2933] antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    @apply font-bold tracking-tight;
+  }
 }
 
 @layer components {
+  /* Layout */
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
+  /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-2xl bg-black text-white font-semibold px-6 py-3 transition-colors duration-200 hover:bg-gray-900;
+    @apply inline-flex items-center justify-center rounded-full bg-[#080808] text-[#F7F3EC] font-semibold px-8 py-3.5 transition-all duration-200 hover:bg-[#C8A96A] hover:text-[#080808] shadow-sm hover:shadow-md;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-2xl border border-black text-black font-semibold px-6 py-3 transition-colors duration-200 hover:bg-black hover:text-white;
+    @apply inline-flex items-center justify-center rounded-full border-2 border-[#E7E1D6] text-[#080808] font-semibold px-8 py-3 transition-all duration-200 hover:border-[#C8A96A] hover:bg-[#F7F3EC];
   }
 
+  /* Typography */
   .section-title {
-    @apply text-4xl md:text-5xl font-bold text-black tracking-tight;
+    @apply text-4xl md:text-5xl font-bold text-[#080808] tracking-tight;
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 max-w-2xl mx-auto;
+    @apply text-lg md:text-xl text-[#667085] max-w-2xl mx-auto;
   }
 
+  /* Cards */
   .card {
-    @apply bg-white border border-gray-200 rounded-3xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300;
+    @apply bg-white border border-[#E7E1D6] rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:border-[#C8A96A] hover:-translate-y-0.5;
+  }
+
+  /* Dark Sections */
+  .dark-section {
+    @apply bg-[#080808] text-[#F7F3EC];
+  }
+
+  .dark-section-title {
+    @apply text-4xl md:text-5xl font-bold text-[#F7F3EC] tracking-tight;
+  }
+
+  .dark-section-subtitle {
+    @apply text-lg md:text-xl text-[#B8C0CC] max-w-2xl mx-auto;
+  }
+
+  /* Accent Elements */
+  .accent-gold {
+    @apply text-[#C8A96A];
+  }
+
+  .accent-border {
+    @apply border-[#C8A96A];
+  }
+
+  /* Badge */
+  .badge-premium {
+    @apply inline-flex items-center gap-2 rounded-full bg-[#F7F3EC] border border-[#E7E1D6] px-4 py-2 text-sm font-medium text-[#667085] shadow-sm;
+  }
+
+  /* Divider */
+  .divider-gold {
+    @apply w-12 h-0.5 bg-[#C8A96A] rounded-full;
   }
 
   .gradient-box {
-    @apply bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white rounded-[2rem] p-8 shadow-2xl;
+    @apply bg-gradient-to-br from-[#1F2933] via-[#080808] to-black text-[#F7F3EC] rounded-2xl p-8 shadow-md;
   }
 }

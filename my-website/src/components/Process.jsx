@@ -8,7 +8,7 @@
   ]
 
   return (
-    <section id="process" className="py-20 bg-gray-50">
+    <section id="process" className="py-20 bg-[#F7F3EC]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">HOW I WORK</h2>
@@ -17,9 +17,9 @@
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5">
           {steps.map(step => (
             <div key={step.id} className="card text-center">
-              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-black text-white font-bold">{step.id}</div>
-              <h3 className="text-lg font-bold text-black mb-3">{step.title}</h3>
-              <p className="text-gray-600">{step.text}</p>
+              <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#080808] text-[#C8A96A] font-bold">{step.id}</div>
+              <h3 className="text-lg font-bold text-[#080808] mb-3">{step.title}</h3>
+              <p className="text-[#667085]">{step.text}</p>
             </div>
           ))}
         </div>

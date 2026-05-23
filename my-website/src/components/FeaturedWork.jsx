@@ -6,7 +6,7 @@
   ]
 
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-[#F7F3EC]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">FEATURED WORK</h2>
@@ -15,10 +15,10 @@
         <div className="grid gap-6 lg:grid-cols-3">
           {projects.map(project => (
             <div key={project.id} className="card">
-              <div className="mb-4 rounded-3xl bg-gray-100 h-56"></div>
-              <span className="inline-flex rounded-full border border-gray-300 px-3 py-1 text-xs uppercase tracking-[.2em] text-gray-600">{project.tag}</span>
-              <h3 className="mt-6 text-xl font-bold text-black mb-3">{project.title}</h3>
-              <p className="text-gray-600">{project.description}</p>
+              <div className="mb-4 rounded-2xl bg-[#E7E1D6] h-56"></div>
+              <span className="inline-flex rounded-full border border-[#E7E1D6] px-3 py-1 text-xs uppercase tracking-[.15em] text-[#667085] bg-white">{project.tag}</span>
+              <h3 className="mt-6 text-xl font-bold text-[#080808] mb-3">{project.title}</h3>
+              <p className="text-[#667085]">{project.description}</p>
             </div>
           ))}
         </div>

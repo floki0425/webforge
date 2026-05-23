@@ -11,7 +11,7 @@ export default function Packages() {
   ]
 
   return (
-    <section id="packages" className="py-20 bg-gray-50">
+    <section id="packages" className="py-20 bg-[#F7F3EC]">
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="section-title">PACKAGES & PRICING</h2>

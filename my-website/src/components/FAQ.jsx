@@ -10,7 +10,7 @@ export default function FAQ() {
   ]
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20 bg-[#F7F3EC]">
       <div className="container-custom">
         <div className="text-center mb-12">
           <h2 className="section-title">FAQ</h2>
