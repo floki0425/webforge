@@ -18,32 +18,32 @@ export default function PricingCard({ packageData }) {
   return (
     <Link
       to={`/packages/${slug}`}
-      className={`group relative flex h-full min-h-[430px] flex-col border p-8 transition-all duration-300 hover:-translate-y-1 ${
+      className={`group relative flex h-full min-h-[430px] flex-col p-7 transition-colors sm:p-8 ${
         isFeatured
-          ? 'border-[#1C1C1C] bg-[#1C1C1C] text-white shadow-[0_30px_80px_rgba(0,0,0,0.22)] lg:-translate-y-3'
-          : 'border-[#DED6C8] bg-[#F7F3EC] text-[#080808] hover:border-[#C8A96A]'
+          ? 'bg-[#080808] text-white'
+          : 'bg-[#F7F3EC] text-[#080808] hover:bg-white'
       }`}
     >
       {isFeatured && (
-        <div className="absolute right-0 top-0 bg-[#C8A96A] px-3 py-1 text-[8px] font-bold uppercase tracking-[0.18em] text-[#080808]">
+        <div className="absolute right-0 top-0 bg-[#C8A96A] px-3 py-1 text-[8px] font-black uppercase tracking-[0.18em] text-[#080808]">
           Most Valued
         </div>
       )}
 
       <div className="mb-7">
         <p
-          className={`mb-4 text-[11px] font-medium ${
-            isFeatured ? 'text-white' : 'text-[#080808]'
+          className={`mb-5 text-[10px] font-black uppercase tracking-[0.24em] ${
+            isFeatured ? 'text-[#C8A96A]' : 'text-[#C8A96A]'
           }`}
         >
           {label}
         </p>
 
-        <h3 className="mb-3 text-3xl font-black tracking-[-0.04em] text-[#C8A96A]">
+        <h3 className="mb-4 text-4xl font-black tracking-[-0.05em] text-[#C8A96A]">
           {displayPrice}
           {!isCustom && (
             <span
-              className={`ml-1 text-[10px] font-medium tracking-normal ${
+              className={`ml-1 text-[10px] font-semibold tracking-normal ${
                 isFeatured ? 'text-white/55' : 'text-[#080808]/50'
               }`}
             >
@@ -53,7 +53,7 @@ export default function PricingCard({ packageData }) {
         </h3>
 
         <h4
-          className={`mb-4 text-base font-semibold ${
+          className={`mb-4 text-2xl font-black tracking-[-0.04em] ${
             isFeatured ? 'text-white' : 'text-[#080808]'
           }`}
         >
@@ -72,7 +72,7 @@ export default function PricingCard({ packageData }) {
       <div className="flex-1 space-y-4">
         {features.map((feature) => (
           <div key={feature} className="flex items-center gap-3">
-            <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-[#C8A96A] text-[#C8A96A]">
+            <span className="flex h-4 w-4 shrink-0 items-center justify-center border border-[#C8A96A] text-[#C8A96A]">
               <svg
                 viewBox="0 0 12 12"
                 fill="none"
@@ -101,7 +101,7 @@ export default function PricingCard({ packageData }) {
       </div>
 
       <div
-        className={`mt-9 inline-flex h-12 items-center justify-center border text-xs font-medium transition-all ${
+        className={`mt-9 inline-flex h-12 items-center justify-center border text-xs font-black transition-all ${
           isFeatured
             ? 'border-[#C8A96A] bg-[#C8A96A] text-[#080808] group-hover:bg-[#d8bb7c]'
             : 'border-[#080808]/70 bg-transparent text-[#080808] group-hover:border-[#080808] group-hover:bg-[#080808] group-hover:text-white'
