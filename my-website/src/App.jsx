@@ -1,36 +1,73 @@
-﻿import Navbar from './components/Navbar'
+﻿import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 import Services from './components/Services'
-import Packages from './components/Packages'
+import PackageDetails from './components/pages/PackageDetails'
+import SampleDemo from './components/pages/SampleDemo'
+import Contact from './components/Contact'
 import PremiumAccent from './components/PremiumAccent'
-import FeaturedWork from './components/FeaturedWork'
+import Packages from './components/Packages'
 import Process from './components/Process'
 import WhyWorkWithMe from './components/WhyWorkWithMe'
 import About from './components/About'
-import Testimonial from './components/Testimonial'
 import FAQ from './components/FAQ'
-import Contact from './components/Contact'
+import Testimonial from './components/Testimonial'
 import Footer from './components/Footer'
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <Services />
+      <Packages />
+      <PremiumAccent />
+      {/* <FeaturedWork /> */}
+      <Process />
+      <WhyWorkWithMe />
+      <About />
+      <Testimonial />
+      <FAQ />
+      <Contact />
+    </>
+  )
+}
+
+function AppShell() {
+  const { pathname } = useLocation()
+  const isDemoRoute = pathname.startsWith('/demos/')
+
+  return (
+    <div className="bg-[#F7F3EC] text-[#1F2933]">
+      {!isDemoRoute && <Navbar />}
+
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+
+          <Route
+            path="/packages/:slug"
+            element={
+              <>
+                <PackageDetails />
+                <Contact />
+              </>
+            }
+          />
+
+          <Route path="/demos/:slug" element={<SampleDemo />} />
+        </Routes>
+      </main>
+
+      {!isDemoRoute && <Footer />}
+    </div>
+  )
+}
 
 function App() {
   return (
-    <div className="bg-[#F7F3EC] text-[#1F2933]">
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <Packages />
-        <PremiumAccent />
-        <FeaturedWork />
-        <Process />
-        <WhyWorkWithMe />
-        <About />
-        <Testimonial />
-        <FAQ />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <AppShell />
+    </BrowserRouter>
   )
 }
 

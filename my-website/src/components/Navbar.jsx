@@ -1,14 +1,14 @@
-﻿import { useState } from 'react'
+﻿import React from 'react'
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+const Navbar = () => {
+    const [isOpen, setIsOpen] = React.useState(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-[#080808] border-b border-[#1a1a1a] shadow-[0_2px_20px_rgba(0,0,0,0.4)]">
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 gap-6">
           <div>
-            <h1 className="text-xl font-bold text-[#F5F0E8]">Webforge</h1>
+            <h1 className="text-xl font-bold text-[#F5F0E8]">Forge</h1>
             <p className="text-xs uppercase tracking-[.15em] text-[#7a7568] font-semibold">Websites. Funnels. Systems.</p>
           </div>
 
@@ -25,7 +25,7 @@ export default function Navbar() {
             <a href="#home" className="hover:text-[#C8A96A] transition-colors duration-200">Home</a>
             <a href="#services" className="hover:text-[#C8A96A] transition-colors duration-200">Services</a>
             <a href="#packages" className="hover:text-[#C8A96A] transition-colors duration-200">Packages</a>
-            <a href="#portfolio" className="hover:text-[#C8A96A] transition-colors duration-200">Portfolio</a>
+            {/* <a href="#portfolio" className="hover:text-[#C8A96A] transition-colors duration-200">Portfolio</a> */}
             <a href="#process" className="hover:text-[#C8A96A] transition-colors duration-200">Process</a>
             <a href="#about" className="hover:text-[#C8A96A] transition-colors duration-200">About</a>
             <a href="#faq" className="hover:text-[#C8A96A] transition-colors duration-200">FAQ</a>
@@ -59,3 +59,4 @@ export default function Navbar() {
   )
 }
 
+export default Navbar
