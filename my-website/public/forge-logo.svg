@@ -1,0 +1,44 @@
+<svg width="260" height="52" viewBox="0 0 260 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="forgeGold" x1="0" y1="8" x2="260" y2="48" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF2D4"/>
+      <stop offset="0.2" stop-color="#CDA77B"/>
+      <stop offset="0.42" stop-color="#FFF0D1"/>
+      <stop offset="0.66" stop-color="#8A6244"/>
+      <stop offset="0.84" stop-color="#E5C294"/>
+      <stop offset="1" stop-color="#FFF3D7"/>
+    </linearGradient>
+    <linearGradient id="topShine" x1="0" y1="10" x2="260" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8E8" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#FFF8E8" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#FFF8E8" stop-opacity="0.75"/>
+    </linearGradient>
+    <filter id="softBevel" x="-8" y="-8" width="276" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="1.4" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.65"/>
+      <feDropShadow dx="0" dy="-0.8" stdDeviation="0.8" flood-color="#FFF2D4" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softBevel)">
+    <text
+      x="0"
+      y="39"
+      fill="url(#forgeGold)"
+      font-family="Arial Black, Montserrat, Arial, sans-serif"
+      font-size="38"
+      font-weight="900"
+      letter-spacing="17"
+    >FORGE</text>
+
+    <text
+      x="0"
+      y="23"
+      fill="url(#topShine)"
+      font-family="Arial Black, Montserrat, Arial, sans-serif"
+      font-size="38"
+      font-weight="900"
+      letter-spacing="17"
+      opacity="0.45"
+    >FORGE</text>
+  </g>
+</svg>

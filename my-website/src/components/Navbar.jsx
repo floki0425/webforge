@@ -25,7 +25,7 @@ const Navbar = () => {
             <a href="#home" className="hover:text-[#C8A96A] transition-colors duration-200">Home</a>
             <a href="#services" className="hover:text-[#C8A96A] transition-colors duration-200">Services</a>
             <a href="#packages" className="hover:text-[#C8A96A] transition-colors duration-200">Packages</a>
-            {/* <a href="#portfolio" className="hover:text-[#C8A96A] transition-colors duration-200">Portfolio</a> */}
+            <a href="#portfolio" className="hover:text-[#C8A96A] transition-colors duration-200">Portfolio</a>
             <a href="#process" className="hover:text-[#C8A96A] transition-colors duration-200">Process</a>
             <a href="#about" className="hover:text-[#C8A96A] transition-colors duration-200">About</a>
             <a href="#faq" className="hover:text-[#C8A96A] transition-colors duration-200">FAQ</a>
@@ -44,7 +44,6 @@ const Navbar = () => {
               <a href="#home" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">Home</a>
               <a href="#services" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">Services</a>
               <a href="#packages" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">Packages</a>
-              <a href="#portfolio" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">Portfolio</a>
               <a href="#process" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">Process</a>
               <a href="#about" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">About</a>
               <a href="#faq" onClick={() => setIsOpen(false)} className="hover:text-[#C8A96A] transition-colors duration-200">FAQ</a>
