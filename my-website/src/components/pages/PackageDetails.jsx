@@ -13,7 +13,7 @@ export default function PackageDetails() {
 
           <Link
             to="/"
-            className="mt-8 inline-flex border border-[#080808] px-6 py-3 text-sm font-medium hover:bg-[#080808] hover:text-white"
+            className="mt-8 inline-flex h-12 items-center justify-center bg-[#080808] px-8 text-sm font-bold text-white"
           >
             Back Home
           </Link>
@@ -28,72 +28,64 @@ export default function PackageDetails() {
 
   return (
     <main className="bg-[#F7F3EC] text-[#080808]">
-      <section className="relative overflow-hidden px-6 py-24 sm:py-28 lg:py-32">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.14]"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at center, #C8A96A 0.6px, transparent 0.6px)',
-            backgroundSize: '24px 24px',
-          }}
-        />
-
-        <div className="relative mx-auto max-w-6xl">
+      <section className="px-6 py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl">
           <Link
-            to="/"
-            className="mb-10 inline-block text-sm font-medium text-[#080808]/55 hover:text-[#C8A96A]"
+            to="/#packages"
+            className="mb-10 inline-flex items-center gap-3 text-sm font-bold text-[#080808]/55 transition hover:text-[#C8A96A]"
           >
-            ← Back to packages
+            <span className="h-px w-7 bg-[#C8A96A]" />
+            Back to packages
           </Link>
 
-          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-            <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-[#C8A96A]">
+          <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
+            <div className="lg:sticky lg:top-28">
+              <p className="mb-5 text-xs font-black uppercase tracking-[0.32em] text-[#C8A96A]">
                 {pkg.label}
               </p>
 
-              <h1 className="text-5xl font-black tracking-[-0.06em] sm:text-6xl">
+              <h1 className="max-w-3xl text-5xl font-black leading-[0.94] tracking-[-0.06em] sm:text-6xl">
                 {pkg.title}
               </h1>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-[#080808]/65">
+              <p className="mt-6 max-w-xl text-base leading-8 text-[#080808]/62 sm:text-lg">
                 {pkg.description}
               </p>
 
-              <div className="mt-8 border-t border-[#DED6C8] pt-8">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#080808]/45">
+              <div className="mt-9 border-y border-[#DED6C8] py-7">
+                <p className="text-xs font-black uppercase tracking-[0.24em] text-[#080808]/42">
                   Starting Investment
                 </p>
 
-                <p className="mt-2 text-5xl font-black tracking-[-0.05em] text-[#C8A96A]">
+                <p className="mt-3 text-5xl font-black tracking-[-0.05em] text-[#C8A96A]">
                   {displayPrice}
                   {!pkg.isCustom && (
-                    <span className="ml-2 text-sm font-medium text-[#080808]/45">
+                    <span className="ml-2 text-sm font-semibold text-[#080808]/45">
                       / project
                     </span>
                   )}
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   to={pkg.demoUrl}
-                  className="inline-flex h-12 items-center justify-center bg-[#080808] px-8 text-sm font-medium text-white transition hover:bg-[#1C1C1C]"
+                  className="inline-flex h-12 items-center justify-center bg-[#080808] px-8 text-sm font-bold text-white transition hover:bg-[#1C1C1C]"
                 >
                   View Demo Website
                 </Link>
 
                 <a
                   href="#contact"
-                  className="inline-flex h-12 items-center justify-center border border-[#080808] px-8 text-sm font-medium text-[#080808] transition hover:bg-[#080808] hover:text-white"
+                  className="inline-flex h-12 items-center justify-center border border-[#080808] px-8 text-sm font-bold text-[#080808] transition hover:bg-[#080808] hover:text-white"
                 >
                   Start This Package
                 </a>
               </div>
             </div>
 
-            <div className="border border-[#DED6C8] bg-[#F7F3EC] p-8 shadow-sm">
-              <DetailBlock title="What’s Included" items={pkg.inclusions} />
+            <div className="grid gap-px overflow-hidden border border-[#DED6C8] bg-[#DED6C8]">
+              <DetailBlock title="What's Included" items={pkg.inclusions} />
               <DetailBlock title="Best For" items={getBestFor(pkg.title)} />
               <DetailBlock
                 title="What Clients Need To Provide"
@@ -104,11 +96,13 @@ export default function PackageDetails() {
                 items={pkg.notIncluded}
               />
 
-              <div className="mt-8 border-t border-[#DED6C8] pt-6">
-                <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#C8A96A]">
+              <div className="bg-[#080808] p-7 text-white sm:p-8">
+                <p className="text-xs font-black uppercase tracking-[0.24em] text-[#C8A96A]">
                   Estimated Timeline
                 </p>
-                <p className="mt-2 text-lg font-semibold">{pkg.timeline}</p>
+                <p className="mt-3 text-2xl font-black tracking-[-0.04em]">
+                  {pkg.timeline}
+                </p>
               </div>
             </div>
           </div>
@@ -120,30 +114,15 @@ export default function PackageDetails() {
 
 function DetailBlock({ title, items }) {
   return (
-    <div className="mb-8">
-      <h2 className="mb-4 text-lg font-bold">{title}</h2>
+    <div className="bg-[#F7F3EC] p-7 sm:p-8">
+      <h2 className="mb-6 text-2xl font-black tracking-[-0.04em]">{title}</h2>
 
-      <div className="space-y-3">
+      <div className="grid gap-3 sm:grid-cols-2">
         {items.map((item) => (
           <div key={item} className="flex gap-3">
-            <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-[#C8A96A] text-[#C8A96A]">
-              <svg
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-2.5 w-2.5"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M3 6.2L5 8.2L9 3.8"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8A96A]" />
 
-            <p className="text-sm leading-6 text-[#080808]/70">{item}</p>
+            <p className="text-sm leading-7 text-[#080808]/62">{item}</p>
           </div>
         ))}
       </div>

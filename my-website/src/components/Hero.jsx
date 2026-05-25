@@ -60,9 +60,9 @@
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-8 py-4 text-sm font-bold text-white backdrop-blur-md transition-all hover:border-[#C8A96A]/60 hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded border border-white/15 bg-white/5 px-8 py-4 text-sm font-bold text-white backdrop-blur-md transition-all hover:border-[#C8A96A]/60 hover:bg-white/10"
               >
-               Services
+                Services
               </a>
             </div>
 
