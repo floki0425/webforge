@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Webforge | Premium Packages &amp; Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .blueprint-grid {
+            background-image: 
+                linear-gradient(to right, rgba(200, 169, 106, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(200, 169, 106, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .blueprint-connector {
+            position: absolute;
+            background: repeating-linear-gradient(90deg, #C8A96A, #C8A96A 4px, transparent 4px, transparent 8px);
+            height: 1px;
+            z-index: 0;
+        }
+        .artifact-card {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+        .artifact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(200, 169, 106, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#747878",
+                      "surface-container": "#f1ede6",
+                      "secondary": "#735b24",
+                      "on-tertiary-fixed": "#331200",
+                      "champagne": "#C8A96A",
+                      "surface-bright": "#fdf9f2",
+                      "secondary-fixed": "#ffdf9f",
+                      "primary-container": "#1c1b1b",
+                      "on-secondary-fixed-variant": "#5a430e",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#e5e2e1",
+                      "on-tertiary-container": "#bb7145",
+                      "surface": "#fdf9f2",
+                      "tertiary-container": "#331200",
+                      "surface-container-highest": "#e6e2db",
+                      "surface-dim": "#dddad3",
+                      "primary": "#000000",
+                      "midnight": "#101624",
+                      "secondary-fixed-dim": "#e3c281",
+                      "tertiary": "#000000",
+                      "copper": "#B76E42",
+                      "on-tertiary-fixed-variant": "#71370e",
+                      "on-tertiary": "#ffffff",
+                      "slate": "#667085",
+                      "inverse-surface": "#31302c",
+                      "surface-variant": "#e6e2db",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed-dim": "#ffb68d",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "stone-border": "#E7E1D6",
+                      "on-primary-fixed-variant": "#474646",
+                      "on-secondary-container": "#785f28",
+                      "on-primary-fixed": "#1c1b1b",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c4c7c7",
+                      "primary-fixed-dim": "#c9c6c5",
+                      "on-surface-variant": "#444748",
+                      "on-surface": "#1c1c18",
+                      "inverse-on-surface": "#f4f0e9",
+                      "tertiary-fixed": "#ffdbc9",
+                      "secondary-container": "#fedb98",
+                      "surface-tint": "#5f5e5e",
+                      "on-error-container": "#93000a",
+                      "on-background": "#1c1c18",
+                      "inverse-primary": "#c9c6c5",
+                      "on-primary-container": "#858383",
+                      "background": "#fdf9f2",
+                      "surface-container-low": "#f7f3ec",
+                      "on-secondary-fixed": "#261a00",
+                      "surface-container-high": "#ebe8e1",
+                      "on-error": "#ffffff",
+                      "ivory": "#F7F3EC",
+                      "obsidian": "#080808"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "section-py-desktop": "128px",
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "container-max": "1280px",
+                      "section-py-mobile": "80px",
+                      "card-p": "32px"
+              },
+              "fontFamily": {
+                      "body-lg": ["DM Sans"],
+                      "button-text": ["Hanken Grotesk"],
+                      "body-md": ["DM Sans"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "headline-lg": ["Hanken Grotesk"],
+                      "display-lg-mobile": ["Hanken Grotesk"],
+                      "label-caps": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.75", "fontWeight": "400"}],
+                      "button-text": ["15px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-ivory text-on-surface selection:bg-champagne/30 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-obsidian/80 backdrop-blur-md border-b border-stone-border/30 shadow-sm h-20">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-full">
+<div class="text-headline-md font-headline-md text-primary dark:text-on-primary tracking-tighter">
+                Webforge
+            </div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Services</a>
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Approach</a>
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Systems</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-button-text text-button-text active:scale-95 duration-200 transition-all hover:bg-champagne">
+                Get a Quote
+            </button>
+</div>
+</nav>
+<!-- Hero / Header Section -->
+<header class="pt-40 pb-16 bg-ivory blueprint-grid overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter relative">
+<!-- Decorative Artifact Background -->
+<div class="absolute -top-10 -right-20 w-96 h-96 opacity-10 pointer-events-none">
+<div class="w-full h-full border border-champagne rounded-full"></div>
+</div>
+<div class="max-w-3xl">
+<p class="font-label-caps text-label-caps text-champagne mb-6">ESTABLISHED PRECISION</p>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 uppercase tracking-tight">
+                    PACKAGES &amp; PRICING
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Transparent pricing for every business size and project need. From high-performance landing pages to full-scale custom enterprise systems.
+                </p>
+</div>
+</div>
+<!-- Pricing Grid Section -->
+<main class="py-section-py-desktop bg-ivory">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Package 1: Starter Website -->
+<div class="artifact-card bg-surface border border-stone-border p-card-p flex flex-col h-full relative group">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-30">REF:001</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-champagne mb-4" data-icon="web">web</span>
+<h3 class="font-headline-md text-headline-md mb-2">Starter Website</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Essential digital presence for emerging brands.</p>
+</div>
+<div class="mb-8 flex items-baseline">
+<span class="text-headline-lg font-headline-lg">₱12,000</span>
+<span class="text-label-caps text-on-surface-variant ml-2">/ FIXED</span>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">5 Custom Responsive Pages</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">SEO Optimized Architecture</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Contact Form Integration</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">1 Month Maintenance</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-button-text text-button-text hover:bg-champagne transition-colors duration-300">
+                        Get Started
+                    </button>
+</div>
+<!-- Package 2: Website Funnel -->
+<div class="artifact-card bg-surface border border-stone-border p-card-p flex flex-col h-full relative group">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-30">REF:002</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-champagne mb-4" data-icon="filter_alt">filter_alt</span>
+<h3 class="font-headline-md text-headline-md mb-2">Website Funnel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-conversion path for lead generation.</p>
+</div>
+<div class="mb-8 flex items-baseline">
+<span class="text-headline-lg font-headline-lg">₱20,000</span>
+<span class="text-label-caps text-on-surface-variant ml-2">/ FIXED</span>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Landing Page Strategy</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Email Marketing Sync</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">A/B Testing Framework</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Conversion Analytics</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-button-text text-button-text hover:bg-champagne transition-colors duration-300">
+                        Get Started
+                    </button>
+</div>
+<!-- Package 3: Business Funnel (Emphasized) -->
+<div class="artifact-card bg-midnight text-on-primary border border-champagne/30 p-card-p flex flex-col h-full relative group overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-champagne"></div>
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-label-caps text-champagne/60">POPULAR</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-champagne mb-4" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md mb-2">Business Funnel</h3>
+<p class="font-body-md text-body-md text-on-primary-container">Complete sales engine for growing firms.</p>
+</div>
+<div class="mb-8 flex items-baseline">
+<span class="text-headline-lg font-headline-lg text-white">₱35,000</span>
+<span class="text-label-caps text-on-primary-container ml-2">/ FIXED</span>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Full CRM Integration</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Automated Workflow Design</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">Payment Gateway Setup</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md">VIP Support (3 Months)</span>
+</div>
+</div>
+<button class="w-full bg-champagne text-primary py-4 rounded-full font-button-text text-button-text hover:bg-white transition-colors duration-300">
+                        Get Started
+                    </button>
+</div>
+<!-- Package 4: E-commerce Website -->
+<div class="artifact-card bg-surface border border-stone-border p-card-p flex flex-col h-full relative group">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-30">REF:004</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-champagne mb-4" data-icon="shopping_bag">shopping_bag</span>
+<h3 class="font-headline-md text-headline-md mb-2">E-commerce Website</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Robust storefronts designed to sell at scale.</p>
+</div>
+<div class="mb-8 flex items-baseline">
+<span class="text-headline-lg font-headline-lg">₱45,000</span>
+<span class="text-label-caps text-on-surface-variant ml-2">/ FIXED</span>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Inventory Management System</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Advanced Search &amp; Filtering</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Customer Account Portals</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Multi-Currency Support</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-button-text text-button-text hover:bg-champagne transition-colors duration-300">
+                        Get Started
+                    </button>
+</div>
+<!-- Package 5: Order System -->
+<div class="artifact-card bg-surface border border-stone-border p-card-p flex flex-col h-full relative group">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-label-caps text-on-surface-variant opacity-30">REF:005</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-champagne mb-4" data-icon="settings_input_component">settings_input_component</span>
+<h3 class="font-headline-md text-headline-md mb-2">Order System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Specialized booking and ordering flows.</p>
+</div>
+<div class="mb-8 flex items-baseline">
+<span class="text-headline-lg font-headline-lg">₱55,000</span>
+<span class="text-label-caps text-on-surface-variant ml-2">/ FIXED</span>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Dynamic Real-time Tracking</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">SMS/Email Notifications</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Admin Dispatch Dashboard</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-copper text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">POS Integration API</span>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-full font-button-text text-button-text hover:bg-champagne transition-colors duration-300">
+                        Get Started
+                    </button>
+</div>
+<!-- Package 6: Custom Web App -->
+<div class="artifact-card bg-obsidian text-on-primary border border-stone-border/20 p-card-p flex flex-col h-full relative group">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-label-caps text-on-primary-container opacity-50">S-CLASS</span>
+</div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-champagne mb-4" data-icon="terminal">terminal</span>
+<h3 class="font-headline-md text-headline-md mb-2">Custom Web App</h3>
+<p class="font-body-md text-body-md text-on-primary-container">Tailored software solutions built for unique needs.</p>
+</div>
+<div class="mb-8 flex items-baseline">
+<span class="text-headline-lg font-headline-lg text-white">QUOTE</span>
+<span class="text-label-caps text-on-primary-container ml-2">/ CUSTOM</span>
+</div>
+<div class="space-y-4 mb-10 flex-grow">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Proprietary Backend Logic</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Unlimited Scalability Design</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Dedicated Project Manager</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-champagne text-sm" data-icon="check_circle">check_circle</span>
+<span class="font-body-md text-body-md">Architectural Blueprinting</span>
+</div>
+</div>
+<button class="w-full border border-stone-border/30 text-white py-4 rounded-full font-button-text text-button-text hover:bg-white hover:text-primary transition-all duration-300">
+                        Consultation
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Detailed Comparison / Specifications Section -->
+<section class="py-section-py-desktop bg-surface-container-low border-t border-stone-border/20 overflow-hidden">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-4">SYSTEM COMPARISON</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Every build at the Webforge studio undergoes rigorous blueprinting and performance testing before deployment.</p>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full border border-stone-border flex items-center justify-center text-champagne cursor-pointer hover:bg-champagne hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</div>
+<div class="w-12 h-12 rounded-full border border-stone-border flex items-center justify-center text-champagne cursor-pointer hover:bg-champagne hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Features Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 bg-white p-8 border border-stone-border blueprint-grid">
+<span class="font-label-caps text-label-caps text-copper mb-4 block">PERFORMANCE CORE</span>
+<h4 class="font-headline-md text-headline-md mb-4">Ultra-Fast Load Times</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Our systems are engineered to achieve 90+ Lighthouse scores. Every micro-second of delay is a lost conversion opportunity we eliminate during the forge process.</p>
+<img class="w-full h-48 object-cover rounded-lg" data-alt="A clean, minimalist high-tech dashboard interface showing green performance metrics and upward trending graphs. The lighting is bright and laboratory-like with a focus on precision and digital craftsmanship. The color palette is composed of warm ivory, obsidian, and subtle champagne gold accents to represent premium technical quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhPxTO3KwcasMeAPS48y3dI2vjXQlfVzT5TKoPI4s68bgeZrSfvK0xpAEhERW5b7hZj1i4CHqMvi69SCNwt_Ar7IU2Uvr9Rp-AlGkrbD1kPWDaBZINZdsqMlOYktK1zm_PQnoUFGm3S9mGvam_9f-uAd2HbWkDSvVdbl6eEWejjSHh9OxXxdpdXMI0yXY7A2xLEnzaGuScIKPjYEcCou4a0UJKdB8OplT4DHVH14yWepiMHAfjdJT1IKx9vMJzz5_nCzfwbwnPVTA"/>
+</div>
+<div class="bg-midnight p-8 border border-stone-border text-on-primary">
+<span class="font-label-caps text-label-caps text-champagne mb-4 block">SECURITY</span>
+<h4 class="font-headline-md text-headline-md mb-4">Fortified API Layers</h4>
+<p class="font-body-md text-body-md text-on-primary-container">Encryption is standard. We protect your customer data with enterprise-grade SSL and secure backend architecture.</p>
+</div>
+<div class="bg-white p-8 border border-stone-border">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4 block">SCALABILITY</span>
+<h4 class="font-headline-md text-headline-md mb-4">Cloud Ready</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Built on infrastructure that grows with your traffic. Zero-downtime migrations and flexible server footprints.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-obsidian w-full font-body-md text-body-md">
+<div class="max-w-container-max mx-auto px-gutter py-section-py-desktop grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="flex flex-col gap-6">
+<div class="text-headline-md font-headline-md text-champagne">Webforge</div>
+<p class="text-on-primary-container/70 max-w-xs">Handcrafting high-performance digital tools for brands that refuse to settle for generic solutions.</p>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-on-primary mb-6">EXPERTISE</h5>
+<ul class="space-y-3">
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Custom Web Apps</a></li>
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">E-commerce Flows</a></li>
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Conversion Funnels</a></li>
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">System Automation</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-on-primary mb-6">STUDIO</h5>
+<ul class="space-y-3">
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">The Forge Process</a></li>
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Case Studies</a></li>
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Our Story</a></li>
+<li><a class="text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-on-primary mb-6">CONNECT</h5>
+<div class="flex flex-col gap-4">
+<p class="text-on-primary-container/70">Ready to start a new project?</p>
+<a class="text-champagne font-bold text-headline-md hover:underline decoration-1 underline-offset-8" href="mailto:hello@webforge.studio">hello@webforge.studio</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-on-primary-container/50 text-xs">
+<div>© 2024 Webforge Digital Studio. Precision Handcrafted Systems.</div>
+<div class="flex gap-6">
+<a class="hover:text-on-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-on-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-on-primary transition-colors" href="#">Sitemap</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for pricing cards
+        document.querySelectorAll('.artifact-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if(icon) {
+                    icon.style.transform = 'scale(1.2) rotate(-5deg)';
+                    icon.style.transition = 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                }
+            });
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.material-symbols-outlined');
+                if(icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+
+        // Sticky Nav logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+        });
+    </script>
+</header>
+</body></html>

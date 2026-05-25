@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Webforge Digital Studio | High-Performance Handcrafted Systems</title>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#747878",
+                    "tertiary-fixed-dim": "#ffb68d",
+                    "inverse-on-surface": "#f4f0e9",
+                    "on-surface": "#1c1c18",
+                    "secondary-container": "#fedb98",
+                    "tertiary-container": "#331200",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-tertiary-fixed": "#331200",
+                    "on-background": "#1c1c18",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "tertiary": "#000000",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c9c6c5",
+                    "champagne": "#C8A96A",
+                    "surface-container-highest": "#e6e2db",
+                    "midnight": "#101624",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#1c1b1b",
+                    "on-secondary-fixed-variant": "#5a430e",
+                    "copper": "#B76E42",
+                    "secondary-fixed": "#ffdf9f",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdbc9",
+                    "primary": "#000000",
+                    "surface-dim": "#dddad3",
+                    "on-secondary-fixed": "#261a00",
+                    "surface-container-high": "#ebe8e1",
+                    "background": "#fdf9f2",
+                    "on-secondary-container": "#785f28",
+                    "obsidian": "#080808",
+                    "secondary-fixed-dim": "#e3c281",
+                    "inverse-surface": "#31302c",
+                    "secondary": "#735b24",
+                    "on-primary-fixed-variant": "#474646",
+                    "stone-border": "#E7E1D6",
+                    "surface-bright": "#fdf9f2",
+                    "slate": "#667085",
+                    "surface-container-low": "#f7f3ec",
+                    "on-tertiary-fixed-variant": "#71370e",
+                    "on-tertiary-container": "#bb7145",
+                    "ivory": "#F7F3EC",
+                    "surface": "#fdf9f2",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#858383",
+                    "outline-variant": "#c4c7c7",
+                    "surface-tint": "#5f5e5e",
+                    "surface-variant": "#e6e2db",
+                    "surface-container": "#f1ede6",
+                    "on-surface-variant": "#444748"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "section-py-desktop": "128px",
+                    "unit": "4px",
+                    "gutter": "24px",
+                    "card-p": "32px",
+                    "section-py-mobile": "80px"
+            },
+            "fontFamily": {
+                    "button-text": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "body-md": ["DM Sans"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-lg": ["DM Sans"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "button-text": ["15px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.75", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24
+    }
+.blueprint-grid {
+    background-image: radial-gradient(circle, #E7E1D6 1px, transparent 1px);
+    background-size: 24px 24px
+    }
+.noise-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBCU7DPGCGSgcfrNzOQWIF3gHQqOYPu5m78hkGvpkLLRFMc0j8zDw6BPmtUfMAWX1OpGoHuZA4r-pwHqZmxPFyIRzWZdRlVCsn7ZRVJK4IQNOsIODPDCoAbQql_zOhCh2MWlrQLVTWcQsvu7yJlctJLRCV4aiOHD7FtxA3YZrAz-GHxQqqhCzqScVfMyQuWH2iMPpqZvnjdUVto9dSEOEbwP5AVHGOBQ9qpdW2n4ntcO76JjAp6hA5YH40yHt9Nf24ay5IsuQTGETw)
+    }
+.glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(231, 225, 214, 0.5)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface selection:bg-champagne selection:text-white overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-stone-border/30 shadow-sm transition-all duration-300" id="navbar">
+<div class="max-w-container-max mx-auto px-6 flex justify-between items-center h-20">
+<span class="text-headline-md font-headline-md text-primary tracking-tighter">Webforge</span>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden flex flex-col gap-1.5 focus:outline-none" id="menu-toggle">
+<span class="w-6 h-0.5 bg-primary"></span>
+<span class="w-6 h-0.5 bg-primary"></span>
+<span class="w-6 h-0.5 bg-primary"></span>
+</button>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-button-text text-button-text text-on-surface-variant hover:text-champagne transition-colors duration-300" href="#services">Services</a>
+<a class="font-button-text text-button-text text-on-surface-variant hover:text-champagne transition-colors duration-300" href="#portfolio">Portfolio</a>
+<a class="font-button-text text-button-text text-on-surface-variant hover:text-champagne transition-colors duration-300" href="#approach">Approach</a>
+<a class="font-button-text text-button-text text-on-surface-variant hover:text-champagne transition-colors duration-300" href="#systems">Systems</a>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-full font-button-text text-button-text hover:bg-champagne active:scale-95 transition-all duration-300">Get a Quote</button>
+</div>
+</div>
+<!-- Mobile Menu Overlay -->
+<div class="hidden absolute top-20 left-0 w-full bg-surface border-b border-stone-border shadow-xl md:hidden" id="mobile-menu">
+<div class="flex flex-col p-6 gap-6">
+<a class="font-headline-md text-headline-md text-primary" href="#services">Services</a>
+<a class="font-headline-md text-headline-md text-primary" href="#portfolio">Portfolio</a>
+<a class="font-headline-md text-headline-md text-primary" href="#approach">Approach</a>
+<a class="font-headline-md text-headline-md text-primary" href="#systems">Systems</a>
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-button-text text-button-text">Get a Quote</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-section-py-mobile md:pb-section-py-desktop overflow-hidden">
+<div class="blueprint-grid absolute inset-0 opacity-40 -z-10"></div>
+<div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7">
+<span class="font-label-caps text-label-caps text-champagne mb-4 block">SYSTEM_INIT_VER_4.0</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-6">
+                    Handcrafting High-Performance <span class="text-champagne italic">Digital Ecosystems</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl">
+                    We forge precision conversion tools for high-growth tech ventures. Technical architecture meets editorial aesthetic.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-obsidian text-ivory px-8 py-5 rounded-full font-button-text text-button-text hover:bg-champagne hover:shadow-lg hover:shadow-champagne/20 transition-all duration-300">Start the Forge Process</button>
+<button class="border border-stone-border px-8 py-5 rounded-full font-button-text text-button-text hover:border-champagne hover:text-champagne transition-all duration-300 flex items-center justify-center gap-2">
+                        View Blueprint <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Layered System Desks Mockup -->
+<div class="md:col-span-5 relative h-[450px] md:h-[600px] flex items-center justify-center">
+<div class="absolute w-[80%] aspect-[3/4] bg-midnight rounded-2xl shadow-2xl overflow-hidden border border-white/10 z-10 translate-x-[-10%] translate-y-[5%] rotate-[-2deg]">
+<img class="w-full h-full object-cover" data-alt="A detailed dashboard UI design for a high-performance analytics platform. The interface features dark mode aesthetics with deep charcoal backgrounds, sleek neon accents in champagne gold and copper, and intricate data visualization charts. The mood is sophisticated, technical, and premium, reflecting a high-end digital laboratory setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcoN8K0irTAmrjkx_BsPE1o6Y02N01cvo6Qh941UwgapEvSDB7oK2yn9g_3bQouL05xvKx5En9UYMf3pyBU9iyF4NZqNNCCc2utGFDxnEoE_ro1JEnTbv6JDWgDYQTPd5e2f5JzWdKWB7YzLEraBcGcjitLo0sB8OLUnG6pPOWuB3DPs1vO_HfrnL34Uiti8zfoA-6GzpjO4oSU8vyuJLKS9o8mUm6fuLRfuzMyjIEjCbPj0Rus6IoFImt232EDzswX1bDsnA-Mqw"/>
+</div>
+<div class="absolute w-[70%] aspect-[9/16] glass-panel rounded-2xl shadow-xl z-20 translate-x-[20%] translate-y-[-10%] rotate-[4deg] overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist mobile app interface for an e-commerce checkout flow. The design uses warm ivory tones with sophisticated black typography and subtle champagne gold button accents. The layout is editorial and spacious, focusing on clarity and dark luxury visual motifs in a bright, modern lighting environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4aSd9uuzFRcyPzL3Oj3nNMBP_-TsKmnh69QB6hSkqjoGZg1OjGfnDolmEef41ezylTc94KuO9GGm5Z6jhTFTC2vMftxcRtGrLNYjMu8V40AJSmaFPLorIX_lJxjjcE4N6gwG6Rls1F2PyPr9-XJ6ag8c3LYKcxMAXsV8x4ADZvqFX-f0Q9eu7qwp3NQ_r8GiK3Kfi3Ga08_UgHgLxnu-P1egqPlVctZfAQW7aPldXbYDx0BjyVG-uh2WO6hPADevURnQbotX9pEc"/>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-champagne/20 rounded-full scale-110 opacity-30 -z-10 animate-pulse"></div>
+</div>
+</div>
+</header>
+<!-- Services Section -->
+<section class="bg-obsidian py-section-py-mobile md:py-section-py-desktop text-ivory relative" id="services">
+<div class="absolute top-0 right-0 p-12 opacity-10 font-label-caps text-[100px] pointer-events-none">CORE_EXP</div>
+<div class="max-w-container-max mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps text-champagne mb-4 block">SERVICES</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">The Forge Capabilities</h2>
+<p class="font-body-md text-body-md text-surface-variant/70">Engineered solutions for the digital age, built on a foundation of technical excellence and aesthetic precision.</p>
+</div>
+<div class="h-px flex-1 bg-stone-border/20 mx-12 hidden md:block mb-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="bg-midnight p-card-p border border-white/5 rounded-2xl hover:-translate-y-2 transition-all duration-300 group">
+<div class="w-12 h-12 bg-champagne/10 rounded-lg flex items-center justify-center text-champagne mb-8 group-hover:bg-champagne group-hover:text-obsidian transition-colors">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">System Architecture</h3>
+<p class="font-body-md text-body-md text-surface-variant/60 mb-6">Scalable backend foundations and API ecosystems designed for 99.9% uptime and lightning performance.</p>
+<ul class="space-y-3 font-label-caps text-[10px] text-champagne/80 tracking-widest">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-champagne rounded-full"></span> CLOUD_NATIVE</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-champagne rounded-full"></span> SERVERLESS_STACK</li>
+</ul>
+</div>
+<!-- Service 2 -->
+<div class="bg-midnight p-card-p border border-white/5 rounded-2xl hover:-translate-y-2 transition-all duration-300 group">
+<div class="w-12 h-12 bg-champagne/10 rounded-lg flex items-center justify-center text-champagne mb-8 group-hover:bg-champagne group-hover:text-obsidian transition-colors">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Conversion Engine</h3>
+<p class="font-body-md text-body-md text-surface-variant/60 mb-6">Handcrafted front-end experiences optimized for sub-second load times and high-intent engagement.</p>
+<ul class="space-y-3 font-label-caps text-[10px] text-champagne/80 tracking-widest">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-champagne rounded-full"></span> INTERACTION_LAB</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-champagne rounded-full"></span> PERF_TUNING</li>
+</ul>
+</div>
+<!-- Service 3 -->
+<div class="bg-midnight p-card-p border border-white/5 rounded-2xl hover:-translate-y-2 transition-all duration-300 group">
+<div class="w-12 h-12 bg-champagne/10 rounded-lg flex items-center justify-center text-champagne mb-8 group-hover:bg-champagne group-hover:text-obsidian transition-colors">
+<span class="material-symbols-outlined">data_object</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Automation Logic</h3>
+<p class="font-body-md text-body-md text-surface-variant/60 mb-6">Bespoke internal tools and workflows that turn complex manual processes into streamlined clockwork.</p>
+<ul class="space-y-3 font-label-caps text-[10px] text-champagne/80 tracking-widest">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-champagne rounded-full"></span> WORKFLOW_SYNC</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-champagne rounded-full"></span> DATA_PIPELINE</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Systems Section -->
+<section class="py-section-py-mobile md:py-section-py-desktop bg-ivory" id="portfolio">
+<div class="max-w-container-max mx-auto px-6">
+<span class="font-label-caps text-label-caps text-champagne mb-4 block text-center">FEATURED_SYSTEMS</span>
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">The Forge Gallery</h2>
+<div class="grid grid-cols-1 gap-12">
+<!-- Case Study 1 -->
+<div class="group relative bg-white border border-stone-border overflow-hidden rounded-2xl flex flex-col md:flex-row shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="md:w-1/2 h-[300px] md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A cinematic, wide shot of a modern workspace with multiple high-resolution monitors displaying complex financial data visualizations. The room is styled with editorial precision, featuring warm wood textures, minimalist ivory walls, and soft atmospheric lighting. The design reflects a professional, boutique agency aesthetic with technical blueprinting motifs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt5GuL1lizaPbBLeZWi-rrn943X9-xR5KPaMLlmpN3mgfyoE4A5i1NLEREGZz0E0z7MQgJ4kq2xQmqT4-uYmwGyeWIVLO8vsOYG28ZzTYlFqpEcxRd1qzJY7_nv13V9IeeX3Fyp_OlrwV79TApkBuTiJcJKFrzL5hU0VHGPrn3y3oJhJCpzCxye6-V-BglPneZXeBJe1QghVSVcqqlMLwepBW39toh0PEbYzWBVoaqU4RPe6CmmFHqg1Bm0AkxQlcgYvE_ykffY5M"/>
+</div>
+<div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-slate tracking-[0.3em] mb-4">FINTECH // ARCHITECTURE</span>
+<h3 class="font-headline-lg text-headline-md md:text-headline-lg text-primary mb-6">Velocis Terminal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">A sub-millisecond trading interface built for institutional hedge funds. Precision engineering meets technical luxury.</p>
+<div class="flex items-center gap-6">
+<button class="font-button-text text-button-text text-primary border-b border-primary pb-1 hover:text-champagne hover:border-champagne transition-all">View Project</button>
+<span class="text-stone-border">|</span>
+<span class="font-label-caps text-[10px] text-champagne">EST_LOAD_TIME: 240MS</span>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="group relative bg-white border border-stone-border overflow-hidden rounded-2xl flex flex-col md:flex-row-reverse shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="md:w-1/2 h-[300px] md:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek tech startup office at night, illuminated by soft blue and purple lighting. A designer is interacting with a large touch-screen display showcasing a sophisticated CRM system with layered card artifacts and refined shadows. The atmosphere is quiet, focused, and high-tech, emphasizing expert craftsmanship and digital forge visual motifs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBITM7LjXIb7PrkN7ht9Hapu--nu5_386FLJ8viIV4tImkCYWdrA4IYpkWRs93VKCUpNw0VuWDikOiY9u88ZqcRauJq6TzyNA18dHMSTfK8CXr26cUTzwUuVUQY3H8IYk79ANmTT9vpodsPe5M4n62KoP9mmbTKLI1nosA73tDDNc6MBZHQzIfkARBKsbDDWURS25RGtWuG9x0YJ1mmHLhEh9-kH3ydSXlC5qTWMMMnOZ73Dw9BZEW3R4F411L1oEDZEIzrjO0BdFk"/>
+</div>
+<div class="md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+<span class="font-label-caps text-[10px] text-slate tracking-[0.3em] mb-4">SAAS // AUTOMATION</span>
+<h3 class="font-headline-lg text-headline-md md:text-headline-lg text-primary mb-6">Flux CRM</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Streamlining sales operations for enterprise logistics firms. Reducing manual entry by 72% via custom logic hooks.</p>
+<div class="flex items-center gap-6">
+<button class="font-button-text text-button-text text-primary border-b border-primary pb-1 hover:text-champagne hover:border-champagne transition-all">View Project</button>
+<span class="text-stone-border">|</span>
+<span class="font-label-caps text-[10px] text-champagne">RESULT: +40% CONV</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Section (Vertical Timeline) -->
+<section class="py-section-py-mobile md:py-section-py-desktop bg-obsidian text-ivory relative overflow-hidden" id="approach">
+<div class="max-w-[800px] mx-auto px-6">
+<span class="font-label-caps text-label-caps text-champagne mb-4 block text-center">FORGE_PROCESS</span>
+<h2 class="font-headline-lg text-headline-lg text-center mb-20">The System Blueprint</h2>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-dashed border-l border-dashed border-champagne/30 -translate-x-1/2"></div>
+<!-- Step 1 -->
+<div class="relative mb-20 flex items-start md:justify-center">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 bg-obsidian border-2 border-champagne rounded-full flex items-center justify-center font-bold text-champagne z-10">01</div>
+<div class="ml-20 md:ml-0 md:w-1/2 md:pr-24 text-left md:text-right">
+<h3 class="font-headline-md text-headline-md mb-4">Extraction</h3>
+<p class="font-body-md text-body-md text-surface-variant/60">We deep-dive into your business logic to extract the core parameters of your digital goals.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative mb-20 flex items-start md:justify-center">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 bg-obsidian border-2 border-champagne rounded-full flex items-center justify-center font-bold text-champagne z-10">02</div>
+<div class="ml-20 md:ml-0 md:w-1/2 md:pl-24 text-left">
+<h3 class="font-headline-md text-headline-md mb-4">Architecting</h3>
+<p class="font-body-md text-body-md text-surface-variant/60">Laying the blueprint. We map every data flow and user interaction before a single pixel is forged.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative mb-20 flex items-start md:justify-center">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 bg-obsidian border-2 border-champagne rounded-full flex items-center justify-center font-bold text-champagne z-10">03</div>
+<div class="ml-20 md:ml-0 md:md:w-1/2 md:pr-24 text-left md:text-right">
+<h3 class="font-headline-md text-headline-md mb-4">The Forge</h3>
+<p class="font-body-md text-body-md text-surface-variant/60">Technical production. High-fidelity UI is built alongside modular, robust system architecture.</p>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex items-start md:justify-center">
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 bg-obsidian border-2 border-champagne rounded-full flex items-center justify-center font-bold text-champagne z-10">04</div>
+<div class="ml-20 md:ml-0 md:w-1/2 md:pl-24 text-left">
+<h3 class="font-headline-md text-headline-md mb-4">Validation</h3>
+<p class="font-body-md text-body-md text-surface-variant/60">Rigorous load testing and conversion auditing to ensure the system performs under pressure.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-section-py-mobile md:py-section-py-desktop bg-background" id="systems">
+<div class="max-w-container-max mx-auto px-6">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-champagne mb-4 block">TIERS</span>
+<h2 class="font-headline-lg text-headline-lg mb-4">System Packages</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Package 1 -->
+<div class="bg-white border border-stone-border p-card-p rounded-2xl flex flex-col">
+<h3 class="font-headline-md text-headline-md mb-2">Forge Core</h3>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-display-lg-mobile font-display-lg-mobile text-primary">$12k</span>
+<span class="text-on-surface-variant/60">/base</span>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-center gap-3 text-body-md"><span class="material-symbols-outlined text-champagne text-sm">check_circle</span> Bespoke Single Landing Page</li>
+<li class="flex items-center gap-3 text-body-md"><span class="material-symbols-outlined text-champagne text-sm">check_circle</span> Technical SEO Optimization</li>
+<li class="flex items-center gap-3 text-body-md"><span class="material-symbols-outlined text-champagne text-sm">check_circle</span> CMS Integration</li>
+</ul>
+<button class="w-full py-4 rounded-xl border border-primary font-button-text text-button-text hover:bg-obsidian hover:text-white transition-all">Initialize Consultation</button>
+</div>
+<!-- Package 2 (Featured) -->
+<div class="bg-midnight text-ivory p-card-p rounded-2xl flex flex-col relative transform md:scale-105 shadow-2xl ring-2 ring-champagne/30">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-champagne text-obsidian px-4 py-1 rounded-full font-label-caps text-[10px] tracking-widest">MOST_DEPLOYED</div>
+<h3 class="font-headline-md text-headline-md mb-2">System Pro</h3>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-display-lg-mobile font-display-lg-mobile text-champagne">$28k</span>
+<span class="text-surface-variant/60">/base</span>
+</div>
+<ul class="space-y-4 mb-10 flex-1">
+<li class="flex items-center gap-3 text-body-md text-surface-variant"><span class="material-symbols-outlined text-champagne text-sm">check_circle</span> Multi-page Conversion Ecosystem</li>
+<li class="flex items-center gap-3 text-body-md text-surface-variant"><span class="material-symbols-outlined text-champagne text-sm">check_circle</span> Advanced Lead Logic</li>
+<li class="flex items-center gap-3 text-body-md text-surface-variant"><span class="material-symbols-outlined text-champagne text-sm">check_circle</span> Performance Dashboard</li>
+</ul>
+<button class="w-full py-4 rounded-xl bg-champagne text-obsidian font-button-text text-button-text hover:bg-white transition-all">Initialize Consultation</button>
+</div>
+<!-- Package 3 -->
+<div class="bg-white border border-stone-border p-card-p rounded-2xl flex flex-col">
+<h3 class="font-headline-md text-headline-md mb-2">Custom Forge</h3>
+<div class="flex items-baseline gap-2 mb-8">
+<span class="text-display-lg-mobile font-display-lg-mobile text-primary">Custom</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-10 flex-1">Bespoke software solutions, complex API integrations, and ongoing R&amp;D for established enterprises.</p>
+<button class="w-full py-4 rounded-xl border border-primary font-button-text text-button-text hover:bg-obsidian hover:text-white transition-all">Request Scoping</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Results/Ethos -->
+<section class="py-section-py-mobile md:py-section-py-desktop bg-obsidian text-ivory">
+<div class="max-w-container-max mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-headline-lg text-headline-lg mb-8 leading-tight">The difference is in the <span class="italic text-champagne">precision of the forge.</span></h2>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="text-headline-lg font-headline-lg text-champagne mb-2">400%</div>
+<p class="font-label-caps text-[10px] text-surface-variant/40 tracking-[0.2em]">AVG_CONV_LIFT</p>
+</div>
+<div>
+<div class="text-headline-lg font-headline-lg text-champagne mb-2">98</div>
+<p class="font-label-caps text-[10px] text-surface-variant/40 tracking-[0.2em]">L_HOUSE_PERF</p>
+</div>
+</div>
+</div>
+<div class="bg-midnight p-8 rounded-2xl border border-white/5 relative">
+<div class="absolute -top-4 -right-4 p-2 bg-champagne text-obsidian rounded-lg">
+<span class="material-symbols-outlined">format_quote</span>
+</div>
+<p class="font-body-lg italic mb-6 text-surface-variant">"Webforge didn't just build us a website; they engineered a sales machine. The aesthetic is second only to the conversion performance."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-stone-border/20"></div>
+<div>
+<p class="font-button-text text-button-text">Marcus Thorne</p>
+<p class="font-label-caps text-[10px] text-champagne">CTO, AETHER_DYNAMICS</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-py-mobile md:py-section-py-desktop bg-background">
+<div class="max-w-3xl mx-auto px-6">
+<h2 class="font-headline-lg text-headline-lg text-center mb-16">Forge FAQ</h2>
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="border-b border-stone-border pb-6 cursor-pointer group" onclick="this.querySelector('.faq-content').classList.toggle('hidden')">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-button-text md:text-headline-md group-hover:text-champagne transition-colors">How long does a typical Forge project take?</h3>
+<span class="material-symbols-outlined text-champagne transition-transform group-active:rotate-45">add</span>
+</div>
+<div class="faq-content hidden font-body-md text-on-surface-variant">
+                        Our standard Forge Core deployment takes 4-6 weeks. Custom System deployments can range from 3-6 months depending on architectural complexity.
+                    </div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border-b border-stone-border pb-6 cursor-pointer group" onclick="this.querySelector('.faq-content').classList.toggle('hidden')">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-button-text md:text-headline-md group-hover:text-champagne transition-colors">What stack do you utilize?</h3>
+<span class="material-symbols-outlined text-champagne">add</span>
+</div>
+<div class="faq-content hidden font-body-md text-on-surface-variant">
+                        We are tech-agnostic but primarily specialize in high-performance stacks including React, Next.js, Node.js, and specialized cloud infrastructure on AWS/Vercel.
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-py-mobile md:py-section-py-desktop bg-obsidian text-ivory">
+<div class="max-w-container-max mx-auto px-6">
+<div class="bg-midnight border border-white/10 rounded-3xl p-8 md:p-16 relative overflow-hidden">
+<div class="blueprint-grid absolute inset-0 opacity-10 pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<span class="font-label-caps text-label-caps text-champagne mb-6 block">PROJECT_INIT</span>
+<h2 class="font-display-lg-mobile md:font-headline-lg mb-8">Ready to Forge something <span class="italic">legendary?</span></h2>
+<p class="font-body-md text-surface-variant/60 mb-10">Brief us on your objectives, and our technical architects will be in touch within 24 hours.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-champagne">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-caps text-xs">COMM@WEBFORGE.STUDIO</span>
+</div>
+<div class="flex items-center gap-4 text-champagne">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-caps text-xs">BERLIN_LAB_HQ</span>
+</div>
+</div>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="font-label-caps text-[10px] text-surface-variant mb-2 block">NAME</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-champagne focus:ring-1 focus:ring-champagne outline-none transition-all text-ivory" type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-surface-variant mb-2 block">EMAIL</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-champagne focus:ring-1 focus:ring-champagne outline-none transition-all text-ivory" type="email"/>
+</div>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-surface-variant mb-2 block">PROJECT_SCOPE</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-champagne focus:ring-1 focus:ring-champagne outline-none transition-all text-ivory" rows="4"></textarea>
+</div>
+<button class="bg-champagne text-obsidian px-10 py-5 rounded-full font-button-text text-button-text w-full md:w-auto hover:bg-white transition-all shadow-lg hover:shadow-champagne/20">Submit Initialization</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary-container dark:bg-obsidian py-16">
+<div class="max-w-container-max mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-1">
+<span class="text-headline-md font-headline-md text-champagne block mb-6">Webforge</span>
+<p class="font-body-md text-on-primary-container/70 text-sm">Precision Handcrafted Systems for the elite tech landscape.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-[10px] text-ivory mb-6 tracking-widest">NAVIGATION</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary-container/70 hover:text-champagne transition-all" href="#">Expertise</a></li>
+<li><a class="font-body-md text-on-primary-container/70 hover:text-champagne transition-all" href="#">Case Studies</a></li>
+<li><a class="font-body-md text-on-primary-container/70 hover:text-champagne transition-all" href="#">The Forge Process</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-[10px] text-ivory mb-6 tracking-widest">LEGAL</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary-container/70 hover:text-champagne transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-on-primary-container/70 hover:text-champagne transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-[10px] text-ivory mb-6 tracking-widest">CONNECT</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-ivory hover:bg-champagne hover:text-obsidian transition-all" href="#">
+<span class="material-symbols-outlined text-sm">link</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-ivory hover:bg-champagne hover:text-obsidian transition-all" href="#">
+<span class="material-symbols-outlined text-sm">send</span>
+</a>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-on-primary-container/70 text-xs">© 2024 Webforge Digital Studio. Precision Handcrafted Systems.</p>
+<div class="flex gap-6 text-[10px] font-label-caps text-surface-variant/30">
+<span>STATUS: ALL_SYSTEMS_OPERATIONAL</span>
+<span>LOC: 52.5200° N, 13.4050° E</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- FAB (Suppressed on Detail/Settings as per logic, but useful on Landing) -->
+<div class="fixed bottom-6 right-6 z-40 hidden md:block">
+<button class="bg-champagne text-obsidian p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+</div>
+<script>
+        // Mobile Menu Toggle Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Simple scroll behavior for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2');
+                nav.classList.remove('py-0');
+            } else {
+                nav.classList.remove('py-2');
+                nav.classList.add('py-0');
+            }
+        });
+    </script>
+</body></html>

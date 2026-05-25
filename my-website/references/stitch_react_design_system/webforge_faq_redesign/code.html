@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FAQ | Webforge Digital Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#474646",
+                    "tertiary-container": "#331200",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#785f28",
+                    "background": "#fdf9f2",
+                    "on-primary": "#ffffff",
+                    "copper": "#B76E42",
+                    "on-secondary-fixed-variant": "#5a430e",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#bb7145",
+                    "stone-border": "#E7E1D6",
+                    "secondary": "#735b24",
+                    "slate": "#667085",
+                    "surface-tint": "#5f5e5e",
+                    "tertiary-fixed": "#ffdbc9",
+                    "secondary-fixed": "#ffdf9f",
+                    "on-secondary-fixed": "#261a00",
+                    "surface": "#fdf9f2",
+                    "inverse-on-surface": "#f4f0e9",
+                    "on-primary-fixed": "#1c1b1b",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#858383",
+                    "on-tertiary-fixed-variant": "#71370e",
+                    "on-background": "#1c1c18",
+                    "on-surface": "#1c1c18",
+                    "midnight": "#101624",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fdf9f2",
+                    "obsidian": "#080808",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#31302c",
+                    "tertiary-fixed-dim": "#ffb68d",
+                    "surface-container-highest": "#e6e2db",
+                    "on-tertiary-fixed": "#331200",
+                    "primary-fixed": "#e5e2e1",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-low": "#f7f3ec",
+                    "surface-container-high": "#ebe8e1",
+                    "outline-variant": "#c4c7c7",
+                    "surface-dim": "#dddad3",
+                    "on-surface-variant": "#444748",
+                    "champagne": "#C8A96A",
+                    "surface-container": "#f1ede6",
+                    "outline": "#747878",
+                    "inverse-primary": "#c9c6c5",
+                    "secondary-container": "#fedb98",
+                    "primary": "#000000",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e6e2db",
+                    "ivory": "#F7F3EC",
+                    "tertiary": "#000000",
+                    "secondary-fixed-dim": "#e3c281",
+                    "primary-fixed-dim": "#c9c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "card-p": "32px",
+                    "container-max": "1280px",
+                    "section-py-mobile": "80px",
+                    "section-py-desktop": "128px",
+                    "unit": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "button-text": ["Hanken Grotesk"],
+                    "label-caps": ["JetBrains Mono"],
+                    "display-lg-mobile": ["Hanken Grotesk"],
+                    "body-lg": ["DM Sans"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "display-lg": ["Hanken Grotesk"],
+                    "body-md": ["DM Sans"],
+                    "headline-lg": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "button-text": ["15px", {"lineHeight": "1", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.75", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-bg {
+            background-image: 
+                linear-gradient(to right, rgba(200, 169, 106, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(200, 169, 106, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .faq-accordion-item[open] .faq-icon {
+            transform: rotate(180deg);
+            color: #C8A96A;
+        }
+        .faq-accordion-item:hover {
+            box-shadow: 0 4px 20px rgba(200, 169, 106, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-champagne selection:text-obsidian font-body-md">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-obsidian/80 backdrop-blur-md border-b border-stone-border/30 shadow-sm">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-20">
+<div class="text-headline-md font-headline-md text-primary dark:text-on-primary tracking-tighter">
+                Webforge
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Services</a>
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Approach</a>
+<a class="font-button-text text-button-text text-on-surface-variant dark:text-on-primary-container hover:text-champagne transition-colors duration-300" href="#">Systems</a>
+</div>
+<button class="bg-obsidian text-ivory px-6 py-3 rounded-full font-button-text text-button-text hover:bg-champagne transition-all duration-300 active:scale-95">
+                Get a Quote
+            </button>
+</div>
+</nav>
+<main class="pt-32 pb-section-py-desktop blueprint-bg min-h-screen">
+<div class="max-w-container-max mx-auto px-gutter">
+<!-- Header Section -->
+<header class="text-center mb-16 md:mb-24">
+<span class="font-label-caps text-label-caps text-champagne block mb-4">INQUIRY FORGE</span>
+<h1 class="font-display-lg text-display-lg md:text-display-lg text-obsidian tracking-tight mb-4">FAQ</h1>
+<p class="font-headline-md text-headline-md text-on-surface-variant/80 max-w-xl mx-auto">
+                    Common questions answered clearly.
+                </p>
+</header>
+<!-- FAQ Container -->
+<div class="max-w-3xl mx-auto flex flex-col gap-6">
+<!-- FAQ Item 1 -->
+<details class="faq-accordion-item group bg-surface border border-stone-border rounded-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<summary class="flex justify-between items-center p-8 list-none group-hover:bg-surface-container-low transition-colors">
+<h3 class="font-headline-md text-headline-md text-obsidian text-xl md:text-2xl tracking-tight">How long does a typical project take?</h3>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-8 pb-8">
+<div class="h-px w-full bg-champagne/30 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Project timelines vary depending on the complexity and scope. A standard high-performance conversion landing page typically takes 2-4 weeks, while a comprehensive end-to-end digital system or multi-page platform usually requires 8-12 weeks of meticulous craftsmanship from initial discovery to final hand-off.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="faq-accordion-item group bg-surface border border-stone-border rounded-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<summary class="flex justify-between items-center p-8 list-none group-hover:bg-surface-container-low transition-colors">
+<h3 class="font-headline-md text-headline-md text-obsidian text-xl md:text-2xl tracking-tight">Do you offer post-launch support?</h3>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-8 pb-8">
+<div class="h-px w-full bg-champagne/30 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Absolutely. We view our deployments as long-term partnerships. Every Webforge project includes a 30-day "hyper-care" monitoring phase. Beyond that, we offer tiered "Forge Maintenance" packages that cover security updates, performance optimization, and iterative feature development to ensure your system remains at peak performance.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="faq-accordion-item group bg-surface border border-stone-border rounded-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<summary class="flex justify-between items-center p-8 list-none group-hover:bg-surface-container-low transition-colors">
+<h3 class="font-headline-md text-headline-md text-obsidian text-xl md:text-2xl tracking-tight">What is your pricing structure?</h3>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-8 pb-8">
+<div class="h-px w-full bg-champagne/30 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            We operate on a value-based, fixed-price model for most projects to provide absolute clarity and budget security. For specific high-growth ventures or ongoing R&amp;D, we offer retainer-based arrangements. Each quote is bespoke, handcrafted to reflect the specific technical requirements and business objectives of your studio forge.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="faq-accordion-item group bg-surface border border-stone-border rounded-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<summary class="flex justify-between items-center p-8 list-none group-hover:bg-surface-container-low transition-colors">
+<h3 class="font-headline-md text-headline-md text-obsidian text-xl md:text-2xl tracking-tight">Can you work with our existing brand guidelines?</h3>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-8 pb-8">
+<div class="h-px w-full bg-champagne/30 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Precision integration is our specialty. We excel at taking established brand DNA and evolving it into a high-performance digital environment. Our "Blueprint" process ensures that every color, font, and interaction aligns perfectly with your existing identity while introducing technical improvements for modern web standards.
+                        </p>
+</div>
+</details>
+<!-- FAQ Item 5 -->
+<details class="faq-accordion-item group bg-surface border border-stone-border rounded-xl transition-all duration-300 overflow-hidden cursor-pointer">
+<summary class="flex justify-between items-center p-8 list-none group-hover:bg-surface-container-low transition-colors">
+<h3 class="font-headline-md text-headline-md text-obsidian text-xl md:text-2xl tracking-tight">What makes Webforge different from a standard agency?</h3>
+<span class="material-symbols-outlined faq-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-8 pb-8">
+<div class="h-px w-full bg-champagne/30 mb-6"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            The difference lies in our "Forge" philosophy. Most agencies use standardized templates; we build handcrafted systems. We prioritize technical performance, conversion architecture, and editorial-grade design over generic trends. You aren't just getting a website; you are getting a precision-engineered tool designed to yield measurable business outcomes.
+                        </p>
+</div>
+</details>
+</div>
+<!-- CTA Section -->
+<div class="mt-24 text-center">
+<div class="p-12 bg-obsidian text-ivory rounded-2xl relative overflow-hidden max-w-4xl mx-auto shadow-2xl">
+<!-- Subtle Glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-champagne/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg mb-6">Still have questions?</h2>
+<p class="font-body-lg text-body-lg text-ivory/70 mb-10 max-w-xl mx-auto">
+                            Our team is ready to provide the technical clarity you need. Reach out to schedule a consultation at the Forge.
+                        </p>
+<a class="inline-block bg-champagne text-obsidian px-10 py-4 rounded-full font-button-text text-button-text hover:bg-ivory transition-all duration-300 shadow-lg hover:shadow-champagne/20" href="mailto:hello@webforge.studio">
+                            Connect with a Specialist
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-primary-container dark:bg-obsidian">
+<div class="max-w-container-max mx-auto px-gutter py-section-py-desktop grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-md font-headline-md text-champagne mb-4">Webforge</div>
+<p class="font-body-md text-body-md text-on-primary-container/70">
+                    Precision handcrafted systems for high-performance digital presence.
+                </p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-6">Navigation</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Expertise</a></li>
+<li><a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Case Studies</a></li>
+<li><a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">The Forge Process</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-6">Legal</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-primary-container/70 hover:text-on-primary transition-all duration-300" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-on-primary-container mb-6">Studio Info</h4>
+<p class="font-body-md text-body-md text-on-primary-container/70">
+                    © 2024 Webforge Digital Studio. Precision Handcrafted Systems.
+                </p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple script to handle exclusive accordion behavior (optional)
+        const accordions = document.querySelectorAll('.faq-accordion-item');
+        accordions.forEach(acc => {
+            acc.addEventListener('toggle', (e) => {
+                if (acc.open) {
+                    accordions.forEach(otherAcc => {
+                        if (otherAcc !== acc) otherAcc.removeAttribute('open');
+                    });
+                }
+            });
+        });
+
+        // Scroll reveal logic
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>
